@@ -282,7 +282,7 @@
 /****************GRADIENT BACKGROUND****************/
 
 .main {
-  height: 100vw;
+  /* height: 100vw; */
   background: linear-gradient(to right, #ffbf00, #00f); /* Set the initial gradient */
   background-size: 200% 100%; /* Increase the size of the gradient */
   animation: gradient 15s ease infinite; /* Animate the gradient */
