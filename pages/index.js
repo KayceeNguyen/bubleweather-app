@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { setMaxListeners } from 'events'
 
@@ -20,7 +20,7 @@ export default function Home() {
   const [country, setCountry] = useState('');
 
   var apiKey = "a26e0a15f49a8c5e5634e795262ea5cd"
-  var lang = "vi";
+  var lang = "en";
   var units = "metric";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${units}&appid=${apiKey}&lang=${lang}`
 
@@ -110,7 +110,7 @@ export default function Home() {
 
           <button className={styles.searchBtn} 
             type="submit"
-            onClick={searchLocation}
+            onClick={setWeather}
           
           >SEARCH</button>
 
