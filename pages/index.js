@@ -13,7 +13,7 @@ export default function Home() {
 
   const [location, setLocation] = useState('');
   const [data, setData] = useState({});
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState('');
   const [wind, setWind] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [icon, setIcon] = useState('');
@@ -129,9 +129,56 @@ export default function Home() {
 
                 <div className={styles.container} key={index}>
 
-<p>Test</p>
+                  <h2 className={styles.name}>{data.name}, {data.sys.country}</h2>
+
+                  {/* <div className={styles.iconId}>{w.icon}</div> */}
+
+                  <img className={styles.icon}
+                    src={` http://openweathermap.org/img/wn/${w.icon}@2x.png`}
+                  />
           
-                 
+                  <br/>
+                  <br/>
+                  <br/>
+
+                  <div className={styles.temp}>{data.main.temp}&#176;C</div>
+                  <div className={styles.feelLike}>Feel Like: {data.main.feels_like}&#176;C</div>
+                  <br/>
+                  
+                  
+
+                  <div className={styles.desc}>
+                    <div>{w.description} | {w.main}</div>
+                    {/* <div>{w.imgUrl}</div> */}
+                  </div>
+
+                  <br/>
+                  <br/>
+
+                  <div className={styles.tempContainer}>
+
+                    <div className={styles.low}>
+                        <h4 className={styles.tittle}>Lowest Temp</h4>
+                        <h4 className={styles.tempMin}>{data.main.temp_min}&#176;C</h4>
+                    </div>
+
+                    <div className={styles.high}>
+                        <h4 className={styles.tittle}>Highest Temp</h4>
+                        <div className={styles.tempMax}>{data.main.temp_max}&#176;C</div>
+                    </div>
+                    
+                  </div>
+
+                  <br/>
+                  <br/>
+
+
+                      <div className={styles.wind}>
+                        <h4 className={styles.tittle}>Wind gust</h4>
+                        <div className={styles.windNum}>{data.wind.gust} m/s</div>
+                      </div>
+                
+                    
                 </div>
 
               
